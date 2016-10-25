@@ -5,7 +5,7 @@
 ## Delta frequency (in Hz) .................................... ## freq_de ## [1.e3]
 ## Orbital height for whistler (in km) ........................ ## orbi    ## [12000.]    
 ## Initial altitude (in fraction of Earth radius) ............. ## frr0    ## [1.0471]
-## Initial latitude (in degrees from 0 to 180) ................ ## dth0    ## [100]
+## Initial latitude (in degrees from 0 to 180) ................ ## dth0    ## [130]
 ## Initial wave normal:radial direction angle (in degrees) .... ## dchi0   ## [0]
 ## Initial group delay time (in seconds) ...................... ## tt0     ## [0]
 ## Maximum -- not time -- for integration ..................... ## tstop   ## [1.0e11]
