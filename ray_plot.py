@@ -1,10 +1,8 @@
 # ------------------------------------------------------------------------------------------ #
-# Description : Plotting of results from ray tracing equations by Rice (1997)  
+# Description : Plotting of results from the ray tracing   
 #
 # Author      : Miroslav Mocak (Slovak Organization For Space Activities)
 # Date        : 31/August/2016
-# Usage       : run ray2d_polar.py (this code is OPEN-SOURCE and free to be used/modified by anyone)
-# References  : Yabroff (1961), Kimura (1966), Rice (1997)  
 # ------------------------------------------------------------------------------------------ #
 
 import numpy as np
@@ -83,9 +81,10 @@ def finPlot(radius,latitude,gdt,freq,dth0,dchi0,ion,ii):
     plt.plot(xmag2,-ymag2,color='r',linewidth=0.5,linestyle='--')
     plt.plot(xmag1,-ymag1,color='r',linewidth=0.5,linestyle='--')
 
+	
     plt.text(-24.e3,20.e3,r"$\theta_0$ = "+str(dth0)+"$^{o}$")	
     plt.text(-24.e3,17.e3,r"$\chi_0$ = " +str(dchi0)+"$^{o}$")
-#    plt.text(-24.e3,14.e3,r"f = "+str(round(freq,1))+" Hz")
+#    plt.text(-24.e3,(14.e3-ii*2.e3),r"f = "+str(round(freq,1))+" Hz")
 	
     plt.text(-24.e3,-3.e3,r"NORTH")
     plt.text(+16.e3,+1.e3,r"SOUTH")
@@ -145,6 +144,33 @@ def finGdt(radius,latitude,gdtb,freqb,dth0,dchi0,ion):
     json.dump(gdtb, f)
     f.close()
 
+	
+def finNphase(radius,latitude,gdtb,freqb,nphase,dth0,dchi0,ion):
+
+    fig=plt.figure(3,figsize=(9,8))
+
+    xmin = 0.   # min x boundary for plotting
+    xmax = 2000. # max x boundary for plotting
+    ymin = 0.   # min y boundary for plotting 
+    ymax = 140.  # max y boundary for plotting
+
+    plt.axis([xmin,xmax,ymin,ymax])	
+
+#    first = [x for (x,y) in nphaseb]
+#    second = [y for (x,y) in nphaseb]
+
+#    plt.semilogx(np.asarray(gdtb-gdtb[-1]),np.asarray(freqb)/1.e3)
+    plt.plot((np.asarray(radius)-ray_cmks.Re)/1.e3,np.asarray(nphase))
+    plt.xlabel(r'height (km)')
+    plt.ylabel(r'phase refractive index')
+    plt.legend(loc=1,prop={'size':14})
+    plt.title(r'')
+
+    name='ray2d_polar_theta_Nphase'+str(dth0)+'_chi'+str(dchi0)+'_'+str(ion)
+    dir='results/'
+    plt.savefig(dir+name+'.png')
+
+	
 def z_func(x,y):
  return (1-(x**2+y**3))*np.exp(-(x**2+y**2)/2)
 	

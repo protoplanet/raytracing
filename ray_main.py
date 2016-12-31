@@ -6,7 +6,9 @@
 # Author      : Miroslav Mocak (Slovak Organization For Space Activities)
 # Date        : 14/October/2016
 # Usage       : run ray_main.py (this code is OPEN-SOURCE and free to be used/modified by anyone)
-# References  : Yabroff (1961), Kimura (1966), Rice (1997)  
+# References  : Rice W.K.M, 1997, "A ray tracing study of VLF phenomena", PhD thesis, 
+#             : Space Physics Research Institute, Department of Physics, University of Natal
+#             : Yabroff (1961), Kimura (1966)  
 # ------------------------------------------------------------------------------------------ #
 
 import numpy as np
@@ -216,9 +218,10 @@ fend = int((freq_en-freq_in)/freq_de)
 # initial array for frequency and group delay time at chosen orbit
 freqb = []	
 gdtb = []
+nphaseb = []
 
 for ii in range(1,fend+1):
-    freq = ii*fd # vary frequency 
+    freq = freq_in+(ii-1)*fd # vary frequency 
     print('Calculating ray path: '+str("%.2g" % freq)+' Hz')
 	
     psoln = ode(f).set_integrator(intype,method='bdf')
@@ -227,18 +230,23 @@ for ii in range(1,fend+1):
     radius = []
     latitude = []
     gdt = []
+    nphase = []
 
     while psoln.successful() and psoln.t < tstop and psoln.y[0] > ray_cmks.Re and psoln.y[0] < (ray_cmks.Re+orbit*1.e3):
         psoln.integrate(psoln.t+dt)
         radius.append(psoln.y[0])
         latitude.append(psoln.y[1])
         gdt.append(psoln.y[3])
+        nphase_single = ray_fncts.phase_refractive_index(psoln.y[0],psoln.y[1],psoln.y[2],freq,ion,ionosphere) 
+        nphase.append(nphase_single[0])
+#        print(ray_fncts.phase_refractive_index(psoln.y[0],psoln.y[1],psoln.y[2],freq,ion,ionosphere))
 #        print(psoln.y[2],(180./np.pi)*psoln.y[2])
-		
+
     xx = radius[:]*np.cos(latitude[:])
     yy = radius[:]*np.sin(latitude[:])
     freqb.append(freq)
     gdtb.append(gdt[-1])
+    nphaseb.append(nphase)
 	
     ray_plot.finPlot(radius,latitude,gdt,freq,dth0,dchi0,ion,ii)		
 	
@@ -248,6 +256,7 @@ for ii in range(1,fend+1):
 
 if pwhist == 1:
     ray_plot.finGdt(radius,latitude,gdtb,freqb,dth0,dchi0,ion)
+#    ray_plot.finNphase(radius,latitude,gdtb,freqb,nphase,dth0,dchi0,ion)
 	
 plt.show()
 plt.clf()	

@@ -3,8 +3,10 @@
 #
 # Author      : Miroslav Mocak (Slovak Organization For Space Activities)
 # Date        : 31/August/2016
-# Usage       : run ray2d_polar.py (this code is OPEN-SOURCE and free to be used/modified by anyone)
-# References  : Yabroff (1961), Kimura (1966), Rice (1997)  
+# References  : Rice W.K.M, 1997, "A ray tracing study of VLF phenomena", PhD thesis, 
+#             : Space Physics Research Institute, Department of Physics, University of Natal
+#             : Yabroff (1961), Kimura (1966)  
+#             : INTERNATIONAL REFERENCE IONOSPHERE IRI-2012 http://omniweb.gsfc.nasa.gov/vitmo/iri2012_vitmo.html  
 # ------------------------------------------------------------------------------------------ #
 
 import numpy as np
