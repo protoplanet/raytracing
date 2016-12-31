@@ -10,6 +10,7 @@ How to start using the code
 - ray_cmks.py (definitions of required physical constants)
 - ray_plot.py (functions for plotting)
 - ray_param.py (parameter file for the ray tracing)
+- IRI folder (contains test IRI model)
 
 3. Choose parameters for simulation in ray_param.dat
 
