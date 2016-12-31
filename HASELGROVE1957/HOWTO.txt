@@ -1,0 +1,12 @@
+How to start using the code
+
+1. Download and install python e.g. use the Anaconda distribution https://www.continuum.io/downloads 
+(It has all the required depedencies and all required libraries ready to go)
+
+2. Find and modify free parameters Xm,Y, B, dip angle etc. for the simulation
+
+3. Open your command line and start ipython
+
+4. In the ipython terminal execute "run rayhasel1.py" or "run rayhasel2e.py"
+
+5. Wait for the results to appear in a graphical windows
