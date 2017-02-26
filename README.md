@@ -1,5 +1,7 @@
 # raytracing
 
+Code PYRAT (PYthon RAy Tracing)
+
 Tracing of radio waves in Earth's ionosphere
 
 Python implementation of ray tracing equations stated in PhD thesis of Rice (1997)  
