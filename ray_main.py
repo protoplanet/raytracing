@@ -3,7 +3,7 @@
 #               Electron/proton stratification according to Yabroff (1961) + IRI model available
 #               Geometry is 2D polar   
 #
-# Author      : Miroslav Mocak (Slovak Organization For Space Activities)
+# Author      : Miroslav Mocak 
 # Date        : 14/October/2016
 # Usage       : run ray_main.py (this code is OPEN-SOURCE and free to be used/modified by anyone)
 # References  : Rice W.K.M, 1997, "A ray tracing study of VLF phenomena", PhD thesis, 

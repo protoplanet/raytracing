@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------------------ #
 # Description : Plotting of results from the ray tracing   
 #
-# Author      : Miroslav Mocak (Slovak Organization For Space Activities)
+# Author      : Miroslav Mocak 
 # Date        : 31/August/2016
 # ------------------------------------------------------------------------------------------ #
 

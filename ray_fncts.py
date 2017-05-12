@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------------------ #
 # Description : Additional functions for implementation of ray tracing equations by Rice (1997)    
 #
-# Author      : Miroslav Mocak (Slovak Organization For Space Activities)
+# Author      : Miroslav Mocak 
 # Date        : 31/August/2016
 # References  : Rice W.K.M, 1997, "A ray tracing study of VLF phenomena", PhD thesis, 
 #             : Space Physics Research Institute, Department of Physics, University of Natal
