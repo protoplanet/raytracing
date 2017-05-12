@@ -3,7 +3,6 @@
 
 # Author: Miroslav Mocak
 # Date: 21/July/2016
-# Slovak Organization For Space Activities
 # ODE solver syntax based on http://www.physics.nyu.edu/pine/pymanual/html/chap9/chap9_scipy.html
 
 import numpy as np
